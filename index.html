@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaylila Safira Ahmad — Portofolio</title>
+<meta name="description" content="Portofolio pencapaian dan prestasi akademik Kaylila Safira Ahmad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">Kaylila<span>.</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#pendidikan">Pendidikan</a></li>
+      <li><a href="#organisasi">Organisasi</a></li>
+      <li><a href="#prestasi">Prestasi</a></li>
+      <li><a href="#tulisan">Tulisan</a></li>
+      <li><a href="#buku">Buku</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </div>
+</nav>
+
+<header class="hero" id="beranda">
+  <div class="container">
+    <div>
+      <span class="hero-eyebrow">Portofolio Pribadi</span>
+      <h1 id="heroName">Kaylila Safira <span class="accent">Ahmad</span></h1>
+      <p id="heroTagline">Pembelajar, pembaca, dan pencerita.</p>
+      <div class="hero-meta" id="heroMeta"></div>
+      <div class="btn-row">
+        <a href="#prestasi" class="btn btn-primary">Lihat Prestasi</a>
+        <a href="#kontak" class="btn btn-outline">Hubungi Saya</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo" id="heroPhoto"><span class="initials">KS</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="tentang">
+  <div class="container">
+    <span class="eyebrow">Tentang Saya</span>
+    <h2 class="section-title">Mengenal Lebih Dekat</h2>
+    <p class="section-desc" id="aboutIntro" style="max-width:760px;"></p>
+    <p class="section-desc" id="aboutMore" style="max-width:760px;"></p>
+  </div>
+</section>
+
+<section class="section section-alt" id="pendidikan">
+  <div class="container">
+    <span class="eyebrow">Jejak Akademik</span>
+    <h2 class="section-title">Perjalanan Pendidikan</h2>
+    <p class="section-desc">Jenjang pendidikan yang telah dan sedang ditempuh.</p>
+    <div class="timeline" id="educationTimeline"></div>
+  </div>
+</section>
+
+<section class="section" id="organisasi">
+  <div class="container">
+    <span class="eyebrow">Pengalaman</span>
+    <h2 class="section-title">Organisasi & Kegiatan</h2>
+    <p class="section-desc">Keterlibatan dalam organisasi, kepanduan, dan program pengembangan diri.</p>
+    <div class="timeline" id="orgTimeline"></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="prestasi">
+  <div class="container">
+    <span class="eyebrow">Pencapaian</span>
+    <h2 class="section-title">Prestasi & Perlombaan</h2>
+    <p class="section-desc">Penghargaan dan capaian dari berbagai kompetisi yang pernah diikuti.</p>
+    <div class="grid-cards" id="achievementGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="tulisan">
+  <div class="container">
+    <span class="eyebrow">Karya</span>
+    <h2 class="section-title">Tulisan & Karya Tulis</h2>
+    <p class="section-desc">Karya tulis dan tulisan yang pernah dibuat.</p>
+    <div class="list-block" id="writingsList"></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="buku">
+  <div class="container">
+    <span class="eyebrow">Literasi</span>
+    <h2 class="section-title">Preferensi Buku yang Saya Baca</h2>
+    <p class="section-desc">Genre dan kategori bacaan favorit sebagai bagian dari kecintaan pada literasi.</p>
+    <div class="list-block" id="booksList"></div>
+  </div>
+</section>
+
+<footer class="footer" id="kontak">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--rose);">Terima Kasih</span>
+    <h2 class="section-title">Mari Terhubung</h2>
+    <p class="section-desc">Terbuka untuk peluang beasiswa, kolaborasi, maupun sekadar berdiskusi seputar literasi dan sains.</p>
+    <div class="footer-grid footer-contact">
+      <div>
+        <div>Email</div>
+        <a id="contactEmail" href="#">-</a>
+      </div>
+      <div id="contactIgWrap" style="display:none;">
+        <div>Instagram</div>
+        <a id="contactIg" href="#" target="_blank">-</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Kaylila Safira Ahmad. Dibuat dengan penuh dedikasi untuk masa depan.
+      <br><a href="admin.html" class="footer-admin">Admin</a>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Portofolio Kaylila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body{background:var(--cream-soft);}
+  .admin-wrap{max-width:900px;margin:0 auto;padding:40px 24px 100px;}
+  .admin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;flex-wrap:wrap;gap:12px;}
+  .admin-header a{font-size:.85rem;color:var(--navy);border:1px solid var(--navy);padding:8px 16px;border-radius:999px;}
+  .panel{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 30px;margin-bottom:26px;}
+  .panel h3{margin-bottom:4px;}
+  .panel .hint{font-size:.82rem;color:#888;margin-bottom:18px;}
+  label{display:block;font-size:.82rem;font-weight:600;color:var(--navy);margin:12px 0 4px;}
+  input[type=text],input[type=email],input[type=password],textarea{
+    width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-family:'Poppins',sans-serif;font-size:.92rem;
+  }
+  textarea{min-height:70px;resize:vertical;}
+  .entry-card{border:1px solid #eee;border-radius:12px;padding:16px 18px;margin-bottom:14px;position:relative;background:#fdfdfd;}
+  .entry-actions{display:flex;gap:10px;margin-top:10px;}
+  .btn-sm{padding:6px 14px;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;border:none;}
+  .btn-del{background:#fde8e8;color:#c0392b;}
+  .btn-add{background:var(--navy);color:#fff;margin-top:8px;}
+  .btn-save{background:var(--gold);color:#fff;padding:10px 22px;border-radius:999px;border:none;font-weight:700;cursor:pointer;font-size:.9rem;}
+  .btn-export{background:var(--navy);color:#fff;padding:10px 22px;border-radius:999px;border:none;font-weight:700;cursor:pointer;font-size:.9rem;}
+  #loginGate{max-width:380px;margin:120px auto;text-align:center;}
+  #loginGate .panel{text-align:left;}
+  .note-box{background:#fff8e6;border:1px solid #f1e0a6;border-radius:12px;padding:14px 18px;font-size:.85rem;color:#7a6210;margin-bottom:24px;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:600px){.field-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div id="loginGate">
+  <div class="panel">
+    <h3>Masuk ke Admin</h3>
+    <p class="hint">Dashboard ini untuk mengelola konten website portofolio.</p>
+    <label>Kata Sandi</label>
+    <input type="password" id="pwInput" placeholder="Masukkan kata sandi">
+    <button class="btn-save" style="margin-top:16px;width:100%;" onclick="tryLogin()">Masuk</button>
+    <p id="pwError" style="color:#c0392b;font-size:.82rem;display:none;margin-top:10px;">Kata sandi salah.</p>
+  </div>
+</div>
+
+<div class="admin-wrap" id="adminPanel" style="display:none;">
+  <div class="admin-header">
+    <h2 style="margin:0;">Dashboard Admin</h2>
+    <a href="index.html">&larr; Lihat Situs</a>
+  </div>
+
+  <div class="note-box">
+    Situs ini bersifat <b>static</b>. Semua perubahan di sini disimpan sementara di browser.
+    Setelah selesai edit, klik <b>Export data.js</b>, lalu ganti file <code>data.js</code> lama di folder website dengan file hasil unduhan ini,
+    dan unggah ulang (redeploy) ke hosting.
+  </div>
+
+  <div class="panel" id="profilePanel">
+    <h3>Profil</h3>
+    <p class="hint">Informasi utama yang tampil di halaman Beranda &amp; Tentang.</p>
+    <div id="profileFields"></div>
+  </div>
+
+  <div class="panel" id="pendidikanPanel">
+    <h3>Pendidikan</h3>
+    <p class="hint">Jenjang SD / SMP / SMA.</p>
+    <div id="educationList"></div>
+    <button class="btn-sm btn-add" onclick="addEntry('education')">+ Tambah Jenjang</button>
+  </div>
+
+  <div class="panel" id="orgPanel">
+    <h3>Organisasi & Kegiatan</h3>
+    <div id="orgList"></div>
+    <button class="btn-sm btn-add" onclick="addEntry('organizations')">+ Tambah Kegiatan</button>
+  </div>
+
+  <div class="panel" id="achPanel">
+    <h3>Prestasi & Lomba</h3>
+    <div id="achList"></div>
+    <button class="btn-sm btn-add" onclick="addEntry('achievements')">+ Tambah Prestasi</button>
+  </div>
+
+  <div class="panel" id="writePanel">
+    <h3>Tulisan / Karya Tulis</h3>
+    <div id="writeList"></div>
+    <button class="btn-sm btn-add" onclick="addEntry('writings')">+ Tambah Tulisan</button>
+  </div>
+
+  <div class="panel" id="bookPanel">
+    <h3>Preferensi Buku</h3>
+    <div id="bookList"></div>
+    <button class="btn-sm btn-add" onclick="addEntry('books')">+ Tambah Kategori Buku</button>
+  </div>
+
+  <div style="display:flex;gap:14px;justify-content:flex-end;">
+    <button class="btn-export" onclick="exportData()">Export data.js</button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
